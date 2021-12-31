@@ -1,0 +1,690 @@
+:root {
+  --theme-color: rgb(2, 187, 243);
+  --side-width: 350px;
+  --side-background-color: rgb(245, 245, 245);
+  --side-section-title-font-size: 1.3rem;
+  --side-section-title-font-weight: bold;
+  --side-section-border-radius: 10px;
+  --side-section-border: 0.5px solid rgb(228, 228, 228);
+  --side-section-padding: 12px 16px;
+  --side-section-padding-showmore: 16px;
+  --showmore-color: rgb(62, 194, 247);
+  --hover-background-color: rgb(221, 221, 221);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fa-certificate {
+  color: rgb(62, 194, 247);
+  display: inline-block;
+  margin-left: 3px;
+}
+
+button {
+  background-color: black;
+  width: 73px;
+  height: 36px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: rgb(22, 22, 22);
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header > .tweet-main {
+  width: 275px;
+  padding: 0 12px;
+  font-size: var(--side-section-title-font-size);
+}
+
+.tweet-main-menu {
+  margin: 0;
+}
+
+.tweet-main-menu > li {
+  width: auto;
+  height: 52px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tweet-main-menu a:not(#main-logo) {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50.25px;
+  border-radius: 30px;
+  padding: 12px;
+}
+
+.tweet-main-menu a:not(#main-logo):hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.fa-twitter {
+  font-size: 2rem;
+  color: var(--theme-color);
+}
+
+#hashtag i,
+#hashtag span {
+  font-size: 1.4rem;
+  color: black;
+}
+
+#settings i,
+#settings span {
+  font-size: 1.4rem;
+  color: black;
+}
+
+#main-logo > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-logo > div:hover {
+  background-color: rgb(220, 246, 248);
+}
+
+.tweet-main-menu div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  width: 990px;
+}
+
+.user-main {
+  width: 600px;
+  border: 1px solid rgb(209, 209, 209);
+}
+
+.user-main-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 53px;
+  padding: 12px;
+}
+
+.user-main-header-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-main-header-arrow:hover {
+  background-color: var(--side-background-color);
+}
+
+.user-main-header-arrow > a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fa-arrow-left {
+  color: black;
+}
+
+.user-main-header-title {
+  height: 53px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 25px;
+}
+
+.user-main-header-title > span {
+  line-height: 34px;
+  font-family: "Mukta", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.user-main-header-title > .tweetNum {
+  line-height: 6px;
+  color: rgb(87, 87, 87);
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+.user-main-profile-description {
+  padding: 12px;
+}
+
+.frame {
+  width: 598px;
+  height: 200px;
+  overflow: hidden;
+  display: block;
+}
+
+.user-main-profile-pic-and-follow {
+  display: flex;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.profile-pic {
+  -webkit-filter: brightness(100%);
+  position: relative;
+  bottom: 80px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid rgb(255, 255, 255);
+}
+
+.profile-pic:hover {
+  -webkit-filter: brightness(70%);
+}
+
+.user-main-profile-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.user-main-profile-id {
+  font-size: 0.9rem;
+  color: rgb(128, 128, 128);
+}
+
+.user-main-profile-status-message {
+  margin-bottom: 12px;
+}
+
+.user-main-profile-link-and-birthdate {
+  color: rgb(128, 128, 128);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.user-main-profile-link-and-birthdate i {
+  display: inline-block;
+  margin-right: 3px;
+  color: rgb(128, 128, 128);
+  font-size: 0.9rem;
+}
+
+.user-main-profile-link-and-birthdate span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.user-main-profile-link-and-birthdate a {
+  color: rgb(62, 194, 247);
+}
+
+.user-main-profile-follow-status > span {
+  font-size: 0.9rem;
+  display: inline-block;
+}
+.user-main-profile-follow-status > span:nth-child(2n + 1) {
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+.user-main-profile-follow-status > span:nth-child(2n) {
+  color: rgb(128, 128, 128);
+  margin-right: 20px;
+}
+
+.user-main-profile-sidebar > ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+}
+
+.user-main-profile-sidebar li {
+  height: 53px;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-main-profile-sidebar a {
+  height: 100%;
+  width: 100%;
+  color: rgb(88, 88, 88);
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-main-profile-sidebar li:hover {
+  background-color: var(--side-background-color);
+}
+
+.user-main-posts {
+  margin-left: 0px;
+  margin-top: 0;
+}
+.user-main-posts > li {
+  width: 600px;
+  display: flex;
+  border: 1px solid rgb(224, 224, 224);
+  padding: 16px 16px 16px 16px;
+}
+
+.user-main-posts :hover {
+  background-color: rgb(243, 243, 243);
+}
+
+.user-main-post-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-main-post {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.user-main-post div {
+  color: black;
+}
+
+.user-main-post-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-id,
+.posted-date {
+  color: rgb(114, 114, 114);
+}
+
+.user-main-post-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-ellipsis-h {
+  color: rgb(105, 105, 105);
+}
+
+.user-main-post-content-preview {
+  margin-top: 12px;
+  display: flex;
+  border-radius: 20px;
+  height: 129px;
+  border: 1px solid rgb(206, 206, 206);
+}
+
+.thumnail {
+  width: 129px;
+  height: 129px;
+  background: url(./thumbnail.jpeg);
+  border-radius: 20px;
+}
+
+.user-main-post-content-preview-description {
+  padding: 12px;
+}
+
+.user-main-post-icons {
+  margin-top: 12px;
+  width: 400px;
+}
+
+.user-main-post-icons > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-main-post-icons a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(126, 126, 126);
+  font-size: 0.8rem;
+}
+
+.user-main-post-icons div {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-main-post-icons li:first-child a:hover {
+  & div {
+    background-color: blue;
+  }
+  color: rgb(30, 144, 255);
+}
+
+.user-main-post-icons li:nth-child(2) a:hover {
+  color: rgb(47, 214, 150);
+}
+
+.user-main-post-icons li:nth-child(3) a:hover {
+  color: rgb(247, 29, 120);
+}
+
+.user-main-post-icons li:last-child a:hover {
+  color: rgb(30, 144, 255);
+}
+
+.user-main-post-icons span {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.user-side {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-side > section {
+  margin-bottom: 16px;
+}
+
+.user-side-searchbar {
+  width: 340px;
+  background-color: rgb(231, 230, 230);
+  border-radius: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 42px;
+  margin: 12px 0;
+  padding: 12px 0px 12px 12px;
+  padding-left: 12px;
+}
+
+.searchicon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-search {
+  color: rgb(82, 82, 82);
+  font-size: 1.5rem;
+}
+
+.user-side-searchbar > input {
+  outline: none;
+  border: none;
+  background-color: rgb(231, 230, 230);
+  margin-left: 12px;
+}
+
+.user-side-searchbar > input :focus {
+  outline: none;
+}
+
+.user-side > section {
+}
+
+.user-side-signup {
+  width: var(--side-width);
+  background-color: rgb(255, 255, 255);
+  border-radius: var(--side-section-border-radius);
+  border: var(--side-section-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.user-side-signup-title {
+  font-size: var(--side-section-title-font-size);
+  font-weight: var(--side-section-title-font-weight);
+  padding: var(--side-section-padding);
+  align-self: flex-start;
+}
+
+.user-side-signup-description {
+  font-size: 0.8rem;
+  padding: 0 12px;
+}
+
+.user-side-signup ul {
+  margin: 0;
+}
+
+.user-side-signup li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 30px;
+  margin: 12px 0;
+  width: 300px;
+  height: 38px;
+}
+
+.user-side-signup a {
+  font-weight: bold;
+  color: black;
+}
+
+.user-side-signup .fab {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.user-side-signup-agreement {
+  font-size: 0.8rem;
+  padding: 0 12px;
+}
+
+.user-side-photos {
+  width: var(--side-width);
+  border-radius: var(--side-section-border-radius);
+}
+
+.user-side-photos > ul {
+  width: var(--side-width);
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.user-side-photos img {
+  width: 112px;
+  height: 96.8px;
+}
+
+.user-side-channel-recommendation {
+  width: var(--side-width);
+  background-color: var(--side-background-color);
+  border-radius: var(--side-section-border-radius);
+}
+
+.user-side-channel-recommendation-title {
+  font-size: var(--side-section-title-font-size);
+  font-weight: var(--side-section-title-font-weight);
+  padding: var(--side-section-padding);
+}
+
+.user-side-channel-recommendation li {
+  width: var(--side-width);
+  padding: var(--side-section-padding);
+  width: var(--side-width);
+  padding: var(--side-section-padding);
+}
+
+.user-side-channel-recommendation li:hover {
+  background-color: var(--hover-background-color);
+}
+
+.user-side-channel-recommendation a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-description-wrapper {
+  display: flex;
+}
+
+.user-profile-name {
+  color: black;
+  font-weight: bold;
+}
+
+.user-profile-id {
+  color: rgb(124, 124, 124);
+  font-size: 0.9rem;
+}
+
+.profile-img > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.user-side-channel-recommendation-showmore {
+  padding: var(--side-section-padding-showmore);
+}
+
+.user-side-channel-recommendation-showmore > a {
+  color: var(--showmore-color);
+}
+
+.user-side-trend-for-user {
+  width: var(--side-width);
+  background-color: var(--side-background-color);
+  border-radius: var(--side-section-border-radius);
+}
+
+.user-side-trend-for-user-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.user-side-trend-for-user li {
+  width: var(--side-width);
+  padding: var(--side-section-padding);
+}
+
+.user-side-trend-for-user li:hover {
+  background-color: var(--hover-background-color);
+}
+
+.user-side-trend-for-user-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--side-section-padding);
+}
+
+.trend-for-user-title {
+  font-size: var(--side-section-title-font-size);
+  font-weight: var(--side-section-title-font-weight);
+}
+
+.trend-place {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgb(110, 110, 110);
+}
+
+.trend-title {
+  font-weight: bold;
+}
+
+.trend-tweetnum {
+  font-size: 0.8rem;
+  color: rgb(110, 110, 110);
+}
+
+.user-side-trend-for-user-showmore {
+  padding: var(--side-section-padding-showmore);
+}
+
+.user-side-trend-for-user-showmore > a {
+  color: var(--showmore-color);
+}
+
+footer {
+}
+
+footer > ul {
+  width: var(--side-width);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer a {
+  margin: 0 5px;
+  font-size: 0.8rem;
+  color: rgb(128, 128, 128);
+}
+
+footer li {
+  margin: 0 5px;
+  font-size: 0.8rem;
+  color: rgb(128, 128, 128);
+}
+
+footer li:last-child {
+  font-weight: bold;
+}
+
+.banner {
+  display: none;
+}
