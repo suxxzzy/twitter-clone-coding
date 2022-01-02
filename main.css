@@ -48,6 +48,17 @@ button {
   border-radius: 20px;
 }
 
+#follow {
+  position: sticky;
+  background-color: black;
+  width: 73px;
+  height: 36px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+}
+
 button:hover {
   background-color: rgb(22, 22, 22);
 }
@@ -133,10 +144,11 @@ main {
 
 .user-main {
   width: 600px;
-  border: 1px solid rgb(209, 209, 209);
+  border: 0.5px solid rgb(209, 209, 209);
 }
 
 .user-main-header {
+  position: sticky;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -284,6 +296,10 @@ main {
   align-items: center;
 }
 
+.user-main-profile-sidebar {
+  border-bottom: 0.5px solid rgb(209, 209, 209);
+}
+
 .user-main-profile-sidebar a {
   height: 100%;
   width: 100%;
@@ -306,7 +322,7 @@ main {
 .user-main-posts > li {
   width: 600px;
   display: flex;
-  border: 1px solid rgb(224, 224, 224);
+  border-bottom: 0.5px solid rgb(224, 224, 224);
   padding: 16px 16px 16px 16px;
 }
 
@@ -359,6 +375,7 @@ main {
 .user-main-post-content-preview {
   margin-top: 12px;
   display: flex;
+  align-items: center;
   border-radius: 20px;
   height: 129px;
   border: 1px solid rgb(206, 206, 206);
@@ -368,7 +385,8 @@ main {
   width: 129px;
   height: 129px;
   background: url(./thumbnail.jpeg);
-  border-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .user-main-post-content-preview-description {
@@ -387,44 +405,54 @@ main {
 }
 
 .user-main-post-icons a {
+  flex: 1 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgb(126, 126, 126);
   font-size: 0.8rem;
 }
 
-.user-main-post-icons div {
+.user-main-post-icons .icon {
   border-radius: 50%;
+  margin-right: 10px;
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: gray;
 }
 
-.user-main-post-icons li:first-child a:hover {
-  & div {
-    background-color: blue;
-  }
-  color: rgb(30, 144, 255);
+.user-main-post-icons .one:hover,
+.user-main-post-icons .four:hover {
+  background-color: rgb(192, 234, 247);
+  color: var(--theme-color);
 }
 
-.user-main-post-icons li:nth-child(2) a:hover {
-  color: rgb(47, 214, 150);
+.user-main-post-icons .two:hover {
+  background-color: rgb(133, 233, 195);
+  color: rgb(12, 206, 132);
 }
 
-.user-main-post-icons li:nth-child(3) a:hover {
-  color: rgb(247, 29, 120);
+.user-main-post-icons .three:hover {
+  background-color: rgb(247, 201, 226);
+  color: rgb(243, 17, 141);
 }
 
-.user-main-post-icons li:last-child a:hover {
-  color: rgb(30, 144, 255);
+.user-main-post-icons .numbers {
+  color: gray;
 }
 
-.user-main-post-icons span {
-  display: inline-block;
-  margin-left: 5px;
+.comment:hover {
+  color: var(--theme-color);
+}
+
+.retweet:hover {
+  color: rgb(12, 206, 132);
+}
+
+.heart:hover {
+  color: rgb(243, 17, 141);
 }
 
 .user-side {
@@ -440,13 +468,14 @@ main {
 
 .user-side-searchbar {
   width: 340px;
+  height: 42px;
   background-color: rgb(231, 230, 230);
   border-radius: 30px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 42px;
-  margin: 12px 0;
+
+  margin: 6px 0;
   padding: 12px 0px 12px 12px;
   padding-left: 12px;
 }
@@ -467,6 +496,7 @@ main {
   border: none;
   background-color: rgb(231, 230, 230);
   margin-left: 12px;
+  font-size: 1.1rem;
 }
 
 .user-side-searchbar > input :focus {
@@ -540,6 +570,22 @@ main {
   justify-content: space-evenly;
   align-content: space-around;
   flex-wrap: wrap;
+}
+
+.user-side-photos li:first-child img {
+  border-top-left-radius: 10px;
+}
+
+.user-side-photos li:nth-child(3) img {
+  border-top-right-radius: 10px;
+}
+
+.user-side-photos li:nth-child(4) img {
+  border-bottom-left-radius: 10px;
+}
+
+.user-side-photos li:nth-child(6) img {
+  border-bottom-right-radius: 10px;
 }
 
 .user-side-photos img {
